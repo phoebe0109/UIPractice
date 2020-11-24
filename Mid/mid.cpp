@@ -12,10 +12,10 @@
  *  @since  0.1.0
  **/
 void error(const std::string& cmd, const std::string& msg) {
-    std::cout << "Error: " << msg << std::endl;
-    std::cout << " type '" << cmd << " -?' to see usage." << std::endl;
+	std::cout << "Error: " << msg << std::endl;
+	std::cout << " type '" << cmd << " -?' to see usage." << std::endl;
 
-    exit(-1);
+	exit(-1);
 } // error()
 
 /**
@@ -32,16 +32,16 @@ void error(const std::string& cmd, const std::string& msg) {
  *  @since  0.1.0
  **/
 void numInBase(
-    const std::string& dec,
-    const std::string& base,
-    const std::string& num
+	const std::string& dec,
+	const std::string& base,
+	const std::string& num
 ) {
-    std::cout
-        << "Decimal number "
-        << dec
-        << base
-        << num
-        << std::endl;
+	std::cout
+		<< "Decimal number "
+		<< dec
+		<< base
+		<< num
+		<< std::endl;
 } // numInBase
 
 /**
@@ -52,13 +52,13 @@ void numInBase(
  *  @since  0.1.0
  **/
 std::string dec2bin(const std::string& dec) {
-    std::stringstream bin;
+	std::stringstream bin;
 
-    bin << std::bitset<16>(std::stoi(dec));
+	bin << std::bitset<16>(std::stoi(dec));
 
-    numInBase(dec, " in 16 bits binary: ", bin.str());
+	numInBase(dec, " in 16 bits binary: ", bin.str());
 
-    return bin.str();
+	return bin.str();
 } // decToBin()
 
 /**
@@ -69,13 +69,13 @@ std::string dec2bin(const std::string& dec) {
  *  @since  0.1.0
  **/
 std::string dec2hex(const std::string& dec) {
-    std::stringstream hex;
+	std::stringstream hex;
 
-    hex << "0x" << std::hex << std::stoi(dec);
+	hex << "0x" << std::hex << std::stoi(dec);
 
-    numInBase(dec, " in hexadecimal: ", hex.str());
+	numInBase(dec, " in hexadecimal: ", hex.str());
 
-    return hex.str();
+	return hex.str();
 } // decToHex()
 
 /**
@@ -86,13 +86,13 @@ std::string dec2hex(const std::string& dec) {
  *  @since  0.1.0
  **/
 std::string dec2oct(const std::string& dec) {
-    std::stringstream oct;
+	std::stringstream oct;
 
-    oct << "0" << std::oct << std::stoi(dec);
+	oct << "0" << std::oct << std::stoi(dec);
 
-    numInBase(dec, " in octal: ", oct.str());
+	numInBase(dec, " in octal: ", oct.str());
 
-    return oct.str();
+	return oct.str();
 } // decToOct()
 
 /**
@@ -109,17 +109,17 @@ std::string dec2oct(const std::string& dec) {
  *  @since  0.1.0
  **/
 void numInDec(
-    const std::string& base,
-    const std::string& num,
-    const std::string& dec
+	const std::string& base,
+	const std::string& num,
+	const std::string& dec
 ) {
-    std::cout
-        << base
-        << " number "
-        << num
-        << " in decimal: "
-        << dec
-        << std::endl;
+	std::cout
+		<< base
+		<< " number "
+		<< num
+		<< " in decimal: "
+		<< dec
+		<< std::endl;
 } // numInDec()
 
 /**
@@ -130,13 +130,13 @@ void numInDec(
  *  @since  0.1.0
  **/
 std::string bin2dec(const std::string& bin) {
-    std::stringstream dec;
+	std::stringstream dec;
 
-    dec << std::stol(bin, nullptr, 2);
+	dec << std::stol(bin, nullptr, 2);
 
-    numInDec("Binary", bin, dec.str());
+	numInDec("Binary", bin, dec.str());
 
-    return dec.str();
+	return dec.str();
 } // bin2dec()
 
 /**
@@ -147,13 +147,13 @@ std::string bin2dec(const std::string& bin) {
  *  @since  0.1.0
  **/
 std::string oct2dec(const std::string& oct) {
-    std::stringstream dec;
+	std::stringstream dec;
 
-    dec << std::stol(oct, nullptr, 8);
+	dec << std::stol(oct, nullptr, 8);
 
-    numInDec("Octal", oct, dec.str());
+	numInDec("Octal", oct, dec.str());
 
-    return dec.str();
+	return dec.str();
 } // oct2dec()
 
 /**
@@ -164,13 +164,13 @@ std::string oct2dec(const std::string& oct) {
  *  @since  0.1.0
  **/
 std::string hex2dec(const std::string& hex) {
-    std::stringstream dec;
+	std::stringstream dec;
 
-    dec << std::stol(hex, nullptr, 16);
+	dec << std::stol(hex, nullptr, 16);
 
-    numInDec("Hexadecimal", hex, dec.str());
+	numInDec("Hexadecimal", hex, dec.str());
 
-    return dec.str();
+	return dec.str();
 } // hex2dec()
 
 /**
@@ -183,16 +183,16 @@ std::string hex2dec(const std::string& hex) {
  *  @since  0.1.0
  **/
 bool is_number(const std::string& str, int base = 10) {
-    size_t sz;
+	size_t sz;
 
-    try {
-        std::stol(str, &sz, base);
-    }
-    catch (const std::invalid_argument& e) {
-        ;
-    }
+	try {
+		std::stol(str, &sz, base);
+	}
+	catch (const std::invalid_argument& e) {
+		;
+	}
 
-    return (sz == str.length());
+	return (sz == str.length());
 } // is_number()
 
 /**
@@ -203,18 +203,18 @@ bool is_number(const std::string& str, int base = 10) {
  *  @since  0.1.0
  **/
 bool test_dec_bin(const std::string& cmd, const std::string& dec) {
-    std::string bin;
-    std::string num;
+	std::string bin;
+	std::string num;
 
-    std::cout << "C:\\" << cmd << " -b " << dec << std::endl;
-    bin = dec2bin(dec);
+	std::cout << "C:\\" << cmd << " -b " << dec << std::endl;
+	bin = dec2bin(dec);
 
-    std::cout << "C:\\" << cmd << " -B " << num << std::endl;
-    num = bin2dec(bin);
+	std::cout << "C:\\" << cmd << " -B " << num << std::endl;
+	num = bin2dec(bin);
 
-    std::cout << std::endl;
+	std::cout << std::endl;
 
-    return (dec == num);
+	return (dec == num);
 } // test_dec_bin();
 
 /**
@@ -225,18 +225,18 @@ bool test_dec_bin(const std::string& cmd, const std::string& dec) {
  *  @since  0.1.0
  **/
 bool test_dec_hex(const std::string& cmd, const std::string& dec) {
-    std::string hex;
-    std::string num;
+	std::string hex;
+	std::string num;
 
-    std::cout << "C:\\" << cmd << " -h " << dec << std::endl;
-    hex = dec2hex(dec);
+	std::cout << "C:\\" << cmd << " -h " << dec << std::endl;
+	hex = dec2hex(dec);
 
-    std::cout << "C:\\" << cmd << " -H " << num << std::endl;
-    num = hex2dec(hex);
+	std::cout << "C:\\" << cmd << " -H " << num << std::endl;
+	num = hex2dec(hex);
 
-    std::cout << std::endl;
+	std::cout << std::endl;
 
-    return (dec == num);
+	return (dec == num);
 } // test_dec_hex();
 
 /**
@@ -247,18 +247,18 @@ bool test_dec_hex(const std::string& cmd, const std::string& dec) {
  *  @since  0.1.0
  **/
 bool test_dec_oct(const std::string& cmd, const std::string& dec) {
-    std::string oct;
-    std::string num;
+	std::string oct;
+	std::string num;
 
-    std::cout << "C:\\" << cmd << " -o " << dec << std::endl;
-    oct = dec2oct(dec);
+	std::cout << "C:\\" << cmd << " -o " << dec << std::endl;
+	oct = dec2oct(dec);
 
-    std::cout << "C:\\" << cmd << " -O " << num << std::endl;
-    num = oct2dec(oct);
+	std::cout << "C:\\" << cmd << " -O " << num << std::endl;
+	num = oct2dec(oct);
 
-    std::cout << std::endl;
+	std::cout << std::endl;
 
-    return (dec == num);
+	return (dec == num);
 } // test_dec_oct();
 
 /**
@@ -270,11 +270,11 @@ bool test_dec_oct(const std::string& cmd, const std::string& dec) {
  *  @since  0.1.0
  **/
 void sample_usage(const std::string& cmd, const std::string& dec) {
-    std::cout << "Examples: " << std::endl << std::endl;
+	std::cout << "Examples: " << std::endl << std::endl;
 
-    test_dec_bin(cmd, dec) ? (void)0 : error(cmd, "Dec-Bin converting error!");
-    test_dec_hex(cmd, dec) ? (void)0 : error(cmd, "Dec-Hex converting error!");
-    test_dec_oct(cmd, dec) ? (void)0 : error(cmd, "Dec-Oct converting error!");
+	test_dec_bin(cmd, dec) ? (void)0 : error(cmd, "Dec-Bin converting error!");
+	test_dec_hex(cmd, dec) ? (void)0 : error(cmd, "Dec-Hex converting error!");
+	test_dec_oct(cmd, dec) ? (void)0 : error(cmd, "Dec-Oct converting error!");
 } // sample_usage()
 
 /**
@@ -285,21 +285,21 @@ void sample_usage(const std::string& cmd, const std::string& dec) {
  *  @since  0.1.0
  **/
 void usage(const std::string& cmd) {
-    std::string num;
+	std::string num;
 
-    std::cout << cmd << " v0.1.0 " << std::endl;
-    std::cout << "usage: " << std::endl;
-    std::cout << " -H hexadecimal to decimal." << std::endl;
-    std::cout << " -h decimal to hexadecimal." << std::endl;
-    std::cout << " -O octal to decimal." << std::endl;
-    std::cout << " -o decimal to octal." << std::endl;
-    std::cout << " -B binary to decimail." << std::endl;
-    std::cout << " -b decimal to binary." << std::endl;
-    std::cout << " -? print this usage." << std::endl;
-    std::cout << " -x some usage samples." << std::endl;
-    std::cout << std::endl;
+	std::cout << cmd << " v0.1.0 " << std::endl;
+	std::cout << "usage: " << std::endl;
+	std::cout << " -H hexadecimal to decimal." << std::endl;
+	std::cout << " -h decimal to hexadecimal." << std::endl;
+	std::cout << " -O octal to decimal." << std::endl;
+	std::cout << " -o decimal to octal." << std::endl;
+	std::cout << " -B binary to decimail." << std::endl;
+	std::cout << " -b decimal to binary." << std::endl;
+	std::cout << " -? print this usage." << std::endl;
+	std::cout << " -x some usage samples." << std::endl;
+	std::cout << std::endl;
 
-    sample_usage(cmd, "101");
+	sample_usage(cmd, "101");
 } // usage()
 
 /**
@@ -311,15 +311,15 @@ void usage(const std::string& cmd) {
  *  @since  0.1.0
  **/
 void args_dump(int argc, char *argv[]) {
-    // 列印所有的 *命令列參數*
-    std::cout << "command line arguments: argv[i]" << std::endl;
+	// 列印所有的 *命令列參數*
+	std::cout << "command line arguments: argv[i]" << std::endl;
 
-    for (int i = 0; i < argc; i ++) {
-        std::cout
-            << std::setfill(' ') << std::setw(3)
-            << i << ": "
-            << argv[i] << std::endl;
-    }
+	for (int i = 0; i < argc; i++) {
+		std::cout
+			<< std::setfill(' ') << std::setw(3)
+			<< i << ": "
+			<< argv[i] << std::endl;
+	}
 }
 
 /**
@@ -330,7 +330,7 @@ void args_dump(int argc, char *argv[]) {
  *  @return int
  *  @since  0.1.0
  **/
- int main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	std::cout << "列印出所有的命令列參數\n" << std::endl;
 	args_dump(argc, argv); // 如果想要檢查程式接收到的
@@ -343,20 +343,20 @@ void args_dump(int argc, char *argv[]) {
 		usage(argv[0]);
 	}
 
-	 if  (argc == 2)
-	 {
-		 if(arg == "-?")
-		 {
-			 usage(argv[0]);
-		 }
-		 else
-		 {
-			 error(argv[0], argv[1]);
-			 usage(argv[0]);
-		 }
+	if (argc == 2)
+	{
+		if (arg == "-?")
+		{
+			usage(argv[0]);
+		}
+		else
+		{
+			error(argv[0], argv[1]);
+			usage(argv[0]);
+		}
 	}
 
-	else (argc==3)
+	if (argc == 3)
 	{
 		if (arg == "-b")
 		{
@@ -401,67 +401,67 @@ void args_dump(int argc, char *argv[]) {
 
 	}
 
-	return 0;
-}
-		 // 命令列參數；可以將前面的
-                              // 註解拿掉
 	
-    // 請在這裡放上你的程式碼
-    // 使得編譯後的執行檔行為和 sample.exe 一致。
-    //
-    // 簡單說 *程式 (sample.exe) 行為* 遵循下列規則：
-    //
-    //  1. sample -? : 呼叫 usage()
-    //
-    //  1. sample -b dec : 呼叫 dec2bin(dec)
-    //
-    //  1. sample -B bin : 呼叫 bin2dec(bin)
-    //
-    //  1. sample -h dec : 呼叫 dec2hex(dec)
-    //
-    //  1. sample -H hex : 呼叫 hex2dec(hex)
-    //
-    //  1. sample -o dec : 呼叫 dec2oct(dec)
-    //
-    //  1. sample -O oct : 呼叫 oct2dec(oct)
-    //
-    //  1. sample -x dec : 呼叫 sample_usage(dec)
-    //
-    //  執行範例
-    //
-    //  1. 可以在命令列執行 test.bat
-    //
-    //     C:\path_to\UI_Practice\9th\midterm> test.bat
-    //
-    //     看 sample.exe 的執行範例
-    //
-    //  1. 或，在命令列執行：
-    //
-    //     C:\path_to\UI_Practice\9th\midterm> sample -?
-    //
-    //     來看 sample.exe 的用法；再自行嘗試。
-    //
-    //  測試程式
-    //
-    //  1. 假設你的程式編譯成 mywork.exe，在命令列執行：
-    //
-    //     C:\path_to\UI_Practice\9th\midterm> test.bat mywork
-    //
-    //     看 mywork.exe 的測試執行結果
-    //
-    //  上傳程式 --- 對自己的程式滿意後：
-    //
-    //  1. 同步到自己的 GitHub 專案裡
-    //
-    //  1. 為確保一致的截止時限，請同時將這份檔案 (midterm.cpp)
-    //     上傳一份到數位學習平台。
-    //
-    //  作業提示
-    //
-    //  1. GitHub 的版本，你可以持續更新
-    //
-    //  1. 截止期限前，你可以多次上傳檔案到數位學習平台
-    //
-    //  祝
-    //    一切順利
-} // main()
+	return 0;
+// 命令列參數；可以將前面的
+					 // 註解拿掉
+
+// 請在這裡放上你的程式碼
+// 使得編譯後的執行檔行為和 sample.exe 一致。
+//
+// 簡單說 *程式 (sample.exe) 行為* 遵循下列規則：
+//
+//  1. sample -? : 呼叫 usage()
+//
+//  1. sample -b dec : 呼叫 dec2bin(dec)
+//
+//  1. sample -B bin : 呼叫 bin2dec(bin)
+//
+//  1. sample -h dec : 呼叫 dec2hex(dec)
+//
+//  1. sample -H hex : 呼叫 hex2dec(hex)
+//
+//  1. sample -o dec : 呼叫 dec2oct(dec)
+//
+//  1. sample -O oct : 呼叫 oct2dec(oct)
+//
+//  1. sample -x dec : 呼叫 sample_usage(dec)
+//
+//  執行範例
+//
+//  1. 可以在命令列執行 test.bat
+//
+//     C:\path_to\UI_Practice\9th\midterm> test.bat
+//
+//     看 sample.exe 的執行範例
+//
+//  1. 或，在命令列執行：
+//
+//     C:\path_to\UI_Practice\9th\midterm> sample -?
+//
+//     來看 sample.exe 的用法；再自行嘗試。
+//
+//  測試程式
+//
+//  1. 假設你的程式編譯成 mywork.exe，在命令列執行：
+//
+//     C:\path_to\UI_Practice\9th\midterm> test.bat mywork
+//
+//     看 mywork.exe 的測試執行結果
+//
+//  上傳程式 --- 對自己的程式滿意後：
+//
+//  1. 同步到自己的 GitHub 專案裡
+//
+//  1. 為確保一致的截止時限，請同時將這份檔案 (midterm.cpp)
+//     上傳一份到數位學習平台。
+//
+//  作業提示
+//
+//  1. GitHub 的版本，你可以持續更新
+//
+//  1. 截止期限前，你可以多次上傳檔案到數位學習平台
+//
+//  祝
+//    一切順利
+	 } // main()
