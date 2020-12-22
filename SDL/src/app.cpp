@@ -92,7 +92,7 @@ void App::hello() {
     rect.x = (800 - 400) / 2;
     rect.y = (600 - 150) / 3;
     rect.w = 400;
-    rect.h = 200;
+    rect.h = 150;
 
     SDL_Rect Rect;
     Rect.x = 10;
