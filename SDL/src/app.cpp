@@ -120,7 +120,7 @@ void App::hello() {
     rect.w = 400;
     rect.h = 150;
 
-    SDL_RenderCopy(renderer_, hello, nullptr, &rect);
+    SDL_RenderCopy(renderer_, hello, R, &rect);
 } // App::hello()
 
 /**
